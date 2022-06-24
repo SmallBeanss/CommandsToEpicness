@@ -1,0 +1,23 @@
+tab1:Toggle("Auto Drop", false, function(t)
+    getgenv().drop_money = t
+    while getgenv().drop_money do
+      if not getgenv().drop_money then break end
+      game:GetService("ReplicatedStorage").MainEvent:FireServer("DropMoney", "10000")
+      wait(0)
+    end
+end)
+tab1:Toggle("Cash Aura", false, function(t)
+    getgenv().money_test = t
+    local RenderConnection
+    RenderConnection = game:GetService"RunService".RenderStepped:Connect(function(deltaTime)
+        if getgenv().money_test == false or not getgenv().moneytest then RenderConnection:Disconnect() end
+        for  v in pairs(Workspace.Ignored.Drop:GetChildren()) do
+            if v.Name == "MoneyDrop" then
+                local MoneyMagnitude = (v.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude
+                if MoneyMagnitude < 25 then
+                    fireclickdetector(v.ClickDetector)
+                end 
+            end
+        end
+    end)
+end)
