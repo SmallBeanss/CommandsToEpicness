@@ -1,5 +1,5 @@
 local player = game.Players.LocalPlayer
-getgenv().FLYSPEED = 25
+getgenv().FLYSPEED = 8
 function flymodelel()
     if FLYMODE == 'Default' then
         local plr = game.Players.LocalPlayer
