@@ -79,10 +79,3 @@
     end)
     Fly()
 end)
-tab1:Button("Full God" , function()
-    for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
-        if v:IsA('MeshPart') or v:IsA('Part') or v:IsA('Accessory') then
-            v:Destroy()
-        end
-    end
- 
