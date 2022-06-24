@@ -1,0 +1,8 @@
+Section2:Toggle("Auto Drop", false, function(t)
+    getgenv().drop_money = t
+    while getgenv().drop_money do
+      if not getgenv().drop_money then break end
+      game:GetService("ReplicatedStorage").MainEvent:FireServer("DropMoney", "10000")
+      wait(0)
+    end
+end)
