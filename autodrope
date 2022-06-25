@@ -4,4 +4,3 @@ getgenv().drop_money = t
       game:GetService("ReplicatedStorage").MainEvent:FireServer("DropMoney", "10000")
       wait(0)
     end
-end)
